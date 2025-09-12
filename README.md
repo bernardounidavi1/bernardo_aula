@@ -1,6 +1,6 @@
 # UNIDAVI - Desenvolvimento Web 2025
 
-![Texto Alternativo](oi.jng)
+![Texto Alternativo](oi.jpg)
 
 
 ## Descrição
@@ -15,5 +15,6 @@ Passos para instalar e configurar o projeto:
 git clone https://...../.git
 cd projeto
 npm install
+
 
 
