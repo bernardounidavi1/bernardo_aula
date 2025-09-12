@@ -1,14 +1,12 @@
 # UNIDAVI - Desenvolvimento Web 2025
 
-![Imagem ou GIF opcional do projeto]
+![Texto Alternativo](oi.png)
+
 
 ## Descrição
 Neste repositório, serão adicionados todos os arquivos das atividades realizadas na disciplina de Desenvolvimento Web 1.
 
-## Índice
 
-- [Aula 1](#aula1.txt)
-- [teste](#index.html)
 
 ## Instalação
 Passos para instalar e configurar o projeto:
@@ -17,3 +15,4 @@ Passos para instalar e configurar o projeto:
 git clone https://...../.git
 cd projeto
 npm install
+
