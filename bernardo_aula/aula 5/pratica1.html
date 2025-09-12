@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora louca123</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #b2b2df;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .container {
+      display: inline-block;
+      background: rgb(213, 243, 247);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(34, 25, 25, 0.2);
+    }
+    input {
+      width: 100px;
+      padding: 5px;
+      margin: 5px;
+    }
+    button {
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #ea03ff;
+      color: rgb(245, 172, 172);
+    }
+    button:hover {
+      background: #005fcc;
+    }
+    #resultado {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Calculadora</h2>
+    <input type="number" id="num1" placeholder="Número 1">
+    <input type="number" id="num2" placeholder="Número 2"><br>
+
+    <button onclick="calcular('+')">+</button>
+    <button onclick="calcular('-')">-</button>
+    <button onclick="calcular('*')">×</button>
+    <button onclick="calcular('/')">÷</button>
+
+    <div id="resultado">Resultado</div>
+  </div>
+
+  <script>
+    function calcular(op) {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      let res;
+
+      if (isNaN(n1) || isNaN(n2)) {
+        alert("Digite dois números ne ta achando oq");
+        return;
+      }
+
+      switch(op) {
+        case '+': res = n1 + n2; break;
+        case '-': res = n1 - n2; break;
+        case '*': res = n1 * n2; break;
+        case '/': 
+          if (n2 === 0) {
+            alert("Não é possível dividir por zero cara  mds");
+            return;
+          }
+          res = n1 / n2; 
+          break;
+      }
+
+      let resultadoDiv = document.getElementById("resultado");
+      resultadoDiv.textContent = "Resultado: " + res;
+
+ 
+      if (res > 0) {
+        resultadoDiv.style.background = "lightgreen";
+      } else if (res < 0) {
+        resultadoDiv.style.background = "tomato";
+      } else {
+        resultadoDiv.style.background = "lightgray";
+      }
+    }
+  </script>
+</body>
+</html>

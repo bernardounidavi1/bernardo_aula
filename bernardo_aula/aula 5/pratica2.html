@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabela de Notas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 500px;
+      text-align: center;
+    }
+    th, td {
+      border: 2px solid black;
+      padding: 10px;
+    }
+    th {
+      background: #0077ff;
+      color: white;
+    }
+    .botoes {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background: #0077ff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005fcc;
+    }
+  </style>
+</head>
+<body>
+  <h2>Tabela de Notas</h2>
+  <table id="tabelaNotas">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Semestre 1</th>
+        <th>Semestre 2</th>
+        <th>Semestre 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Bernardo</td>
+        <td>10</td>
+        <td>9</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>DEIVID SEIS TRENS</td>
+        <td>1</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>tadinho</td>
+        <td>2</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="botoes">
+    <button onclick="mediaColunas()">Adicionar Linha de Médias</button>
+    <button onclick="mediaLinhas()">Adicionar Coluna de Médias</button>
+  </div>
+
+  <script>
+    function mediaColunas() {
+      let tabela = document.getElementById("tabelaNotas");
+      let linhas = tabela.rows;
+      let numLinhas = linhas.length;
+      let numColunas = linhas[0].cells.length;
+
+      let novaLinha = tabela.insertRow(numLinhas);
+
+      let celulaTitulo = novaLinha.insertCell(0);
+      celulaTitulo.innerHTML = "<b>Média</b>";
+
+      for (let c = 1; c < numColunas; c++) {
+        let soma = 0;
+        for (let l = 1; l < numLinhas; l++) {
+          soma += parseFloat(linhas[l].cells[c].innerText);
+        }
+        let media = (soma / (numLinhas - 1)).toFixed(2);
+        novaLinha.insertCell(c).innerText = media;
+      }
+    }
+
+    function mediaLinhas() {
+      let tabela = document.getElementById("tabelaNotas");
+      let linhas = tabela.rows;
+      let numLinhas = linhas.length;
+
+      
+      linhas[0].insertCell(-1).outerHTML = "<th>Média</th>";
+
+      for (let l = 1; l < numLinhas; l++) {
+        let soma = 0;
+        let qtdNotas = linhas[l].cells.length - 1; 
+        for (let c = 1; c < qtdNotas; c++) {
+          soma += parseFloat(linhas[l].cells[c].innerText);
+        }
+        let media = (soma / (qtdNotas - 1)).toFixed(2);
+        linhas[l].insertCell(-1).innerText = media;
+      }
+    }
+  </script>
+</body>
+</html>
