@@ -2,7 +2,7 @@
 
 ## 📘 Exercícios
 
-- [Aula 8](https://github.com/bernardounidavi1/bernardo_aula/tree/main/aula8)
+- [Aula 8](https://github.com/bernardounidavi1/bernardo_aula/aula8)
 
 
 
@@ -21,6 +21,7 @@ Passos para instalar e configurar o projeto:
 git clone https://...../.git
 cd projeto
 npm install
+
 
 
 
