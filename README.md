@@ -1,9 +1,5 @@
 # UNIDAVI - Desenvolvimento Web 2025
 
-## 📘 Exercícios
-
-- [Aula 8](https://github.com/bernardounidavi1/bernardo_aula/aula8)
-
 
 
 ![Texto Alternativo](oi.jpg)
@@ -21,6 +17,7 @@ Passos para instalar e configurar o projeto:
 git clone https://...../.git
 cd projeto
 npm install
+
 
 
 
