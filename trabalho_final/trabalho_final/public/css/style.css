@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #f0f2f5;
+    min-height: 100vh;
+    padding: 25px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.topo {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    padding: 45px 30px;
+    color: white;
+    text-align: center;
+}
+
+.topo h1 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.topo p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+form {
+    padding: 35px;
+}
+
+.pergunta {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.pergunta label {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 18px;
+}
+
+.escala-topo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+.escala {
+    display: flex;
+    gap: 10px;
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+
+.opcao {
+    flex: 1;
+    text-align: center;
+    min-width: 45px; 
+    position: relative;
+}
+
+.opcao input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.opcao label {
+    display: block;
+    padding: 12px 5px;
+    background: white;
+    border: 2px solid #d1d5db;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all .2s;
+}
+
+
+.opcao:nth-child(1) label  { background-color: #ff4d4d; color: white; }
+.opcao:nth-child(2) label  { background-color: #ff704d; color: white; }
+.opcao:nth-child(3) label  { background-color: #ff8533; color: white; }
+.opcao:nth-child(4) label  { background-color: #ffa31a; color: white; }
+.opcao:nth-child(5) label  { background-color: #ffbf00; color: white; }
+.opcao:nth-child(6) label  { background-color: #ffe066; }
+.opcao:nth-child(7) label  { background-color: #e6ff4d; }
+.opcao:nth-child(8) label  { background-color: #c6ff33; }
+.opcao:nth-child(9) label  { background-color: #a3ff33; }
+.opcao:nth-child(10) label { background-color: #6aff33; }
+.opcao:nth-child(11) label { background-color: #33cc33; color: white; }
+
+.opcao input[type="radio"]:checked + label {
+    border-color: #1e40af;
+    transform: scale(1.18);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+}
+
+.feedback {
+    margin-top: 35px;
+}
+
+.feedback label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1f2937;
+}
+
+.feedback textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 15px;
+    min-height: 120px;
+    resize: vertical;
+    transition: .2s;
+}
+
+.feedback textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 18px;
+    background: #2563eb;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: .2s;
+}
+
+button[type="submit"]:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.rodape {
+    text-align: center;
+    padding: 25px;
+    background: #f9fafb;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.sucesso {
+    padding: 60px;
+    text-align: center;
+    animation: fadeIn 0.5s;
+}
+
+.sucesso h1 {
+    font-size: 32px;
+    color: #2563eb;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.sucesso p {
+    font-size: 18px;
+    color: #374151;
+    margin-bottom: 30px;
+}
+
+.sucesso button {
+    padding: 14px 35px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.sucesso button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.erro {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid #dc2626;
+    border-radius: 8px;
+    font-size: 15px;
+}
